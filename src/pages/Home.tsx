@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { personalInfo, projects } from '../data/portfolio';
 import ProjectCard from '../components/ProjectCard';
 import { Github, Facebook, ExternalLink, Gamepad2 } from 'lucide-react';
+import profileImage from '/profile.png';
 
 const Home = () => {
   const fadeInLeft = {
@@ -13,12 +14,6 @@ const Home = () => {
   const fadeInRight = {
     initial: { opacity: 0, x: 100 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.8, ease: "easeOut" }
-  };
-
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.5 },
-    animate: { opacity: 1, scale: 1 },
     transition: { duration: 0.8, ease: "easeOut" }
   };
 
@@ -130,7 +125,7 @@ const Home = () => {
               />
               
               <motion.img
-                src="/public/profile.png"
+                src={profileImage}
                 alt={personalInfo.name}
                 className="w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-[#38761d] shadow-2xl relative z-10"
                 initial={{ 
