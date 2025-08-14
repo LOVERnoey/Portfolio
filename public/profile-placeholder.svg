@@ -1,0 +1,7 @@
+<!-- This is a placeholder SVG for the profile image -->
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#E5E7EB"/>
+  <circle cx="150" cy="120" r="40" fill="#9CA3AF"/>
+  <ellipse cx="150" cy="220" rx="60" ry="40" fill="#9CA3AF"/>
+  <text x="150" y="260" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="14">Your Photo Here</text>
+</svg>
