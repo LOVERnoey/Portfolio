@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/Portfolio/', // Your GitHub repository name
+  base: './', // Use relative paths instead of absolute
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
