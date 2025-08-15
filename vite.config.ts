@@ -8,34 +8,27 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(), 
     tailwindcss(),
-    // Add obfuscation in production
+    // Add lightweight obfuscation in production
     ...(mode === 'production' ? [
       obfuscator({
         options: {
           stringArray: true,
-          stringArrayThreshold: 0.8,
-          stringArrayEncoding: ['base64'],
+          stringArrayThreshold: 0.5,
           identifierNamesGenerator: 'hexadecimal',
-          selfDefending: true,
           compact: true,
-          controlFlowFlattening: true,
-          controlFlowFlatteningThreshold: 0.8,
-          deadCodeInjection: true,
-          deadCodeInjectionThreshold: 0.4,
-          debugProtection: true,
-          debugProtectionInterval: 2000,
-          disableConsoleOutput: true,
-          numbersToExpressions: true,
+          controlFlowFlattening: false, // Disabled for performance
+          deadCodeInjection: false, // Disabled for performance
+          debugProtection: false, // Disabled for performance
+          disableConsoleOutput: false, // Disabled for performance
+          numbersToExpressions: false, // Disabled for performance
           simplify: true,
           sourceMap: false,
-          splitStrings: true,
-          splitStringsChunkLength: 5,
-          stringArrayCallsTransform: true,
-          stringArrayCallsTransformThreshold: 0.8,
-          stringArrayRotate: true,
-          stringArrayShuffle: true,
+          splitStrings: false, // Disabled for performance
+          stringArrayCallsTransform: false, // Disabled for performance
+          stringArrayRotate: false, // Disabled for performance
+          stringArrayShuffle: false, // Disabled for performance
           target: 'browser',
-          transformObjectKeys: true,
+          transformObjectKeys: false, // Disabled for performance
           unicodeEscapeSequence: false
         }
       })
@@ -59,7 +52,7 @@ export default defineConfig(({ mode }) => ({
   },
   esbuild: {
     drop: ['console', 'debugger'],
-    minifyIdentifiers: true,
+    minifyIdentifiers: false, // Reduced for performance
     minifySyntax: true,
     minifyWhitespace: true,
     legalComments: 'none'
