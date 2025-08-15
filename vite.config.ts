@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => ({
       })
     ] : [])
   ],
-  base: '/Portfolio/', // Update this to match your repository name
+  base: './', // Use relative paths for GitHub Pages
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
