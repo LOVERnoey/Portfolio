@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => ({
       })
     ] : [])
   ],
-  base: './', // Use relative paths instead of absolute
+  base: '/Portfolio/', // Update this to match your repository name
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
