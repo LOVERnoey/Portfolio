@@ -5,53 +5,6 @@
     <link rel="icon" type="image/png" href="/profile.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ratchakit Sriprapai - Portfolio</title>
-    
-    <!-- Anti-debugging and obfuscation -->
-    <script>
-      // Disable right-click context menu
-      document.addEventListener('contextmenu', e => e.preventDefault());
-      
-      // Disable F12, Ctrl+Shift+I, Ctrl+U
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'F12' || 
-            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
-            (e.ctrlKey && e.shiftKey && e.key === 'C') ||
-            (e.ctrlKey && e.shiftKey && e.key === 'J') ||
-            (e.ctrlKey && e.key === 'u')) {
-          e.preventDefault();
-          return false;
-        }
-      });
-      
-      // Debug detection
-      setInterval(function() {
-        const before = new Date();
-        debugger;
-        const after = new Date();
-        if (after - before > 100) {
-          document.body.innerHTML = '<h1>Debug mode detected!</h1>';
-        }
-      }, 1000);
-      
-      // Console protection
-      let devtools = {
-        open: false,
-        orientation: null
-      };
-      
-      setInterval(function() {
-        if (window.outerHeight - window.innerHeight > 200 || 
-            window.outerWidth - window.innerWidth > 200) {
-          devtools.open = true;
-          console.clear();
-          console.log('%cAccess Denied!', 'color: red; font-size: 50px; font-weight: bold;');
-        }
-      }, 500);
-      
-      // Disable text selection
-      document.onselectstart = function() { return false; };
-      document.onmousedown = function() { return false; };
-    </script>
   </head>
   <body>
     <div id="root"></div>

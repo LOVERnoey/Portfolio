@@ -4,17 +4,11 @@
     <meta charset="utf-8">
     <title>Ratchakit Sriprapai - Portfolio</title>
     <script type="text/javascript">
-      // This script handles GitHub Pages single page application routing
-      // It works by redirecting from 404.html to index.html with the path as a query parameter
-      var pathSegmentsToKeep = 1;
+      // Redirect to index.html with hash for HashRouter
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
-        '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+        '/Portfolio/#' + l.pathname.slice('/Portfolio/'.length)
       );
     </script>
   </head>
