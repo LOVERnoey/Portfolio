@@ -8,24 +8,9 @@ export default defineConfig({
   base: '/Portfolio/',
   build: {
     outDir: 'dist',
-    minify: false, // Disable minification to prevent eval
+    assetsDir: 'assets',
     sourcemap: false,
-    target: 'es2015', // Use older target to avoid modern features that might use eval
-    rollupOptions: {
-      output: {
-        // Disable code splitting to prevent eval in dynamic imports
-        manualChunks: undefined,
-        inlineDynamicImports: true,
-        format: 'es'
-      }
-    }
-  },
-  esbuild: {
-    minifyIdentifiers: false,
-    minifySyntax: false,
-    minifyWhitespace: false
-  },
-  define: {
-    'process.env.NODE_ENV': '"production"'
+    target: 'es2015',
+    minify: false // Disable minification to avoid CSP issues
   }
 })
