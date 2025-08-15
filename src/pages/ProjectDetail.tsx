@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../data/portfolio';
+import Footer from '../components/Footer';
 import { Github, ExternalLink, ArrowLeft, CheckCircle } from 'lucide-react';
 
 const ProjectDetail: React.FC = () => {
@@ -28,7 +29,7 @@ const ProjectDetail: React.FC = () => {
             Project Not Found
           </motion.h2>
           <motion.button 
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/projects')}
             className="px-8 py-4 bg-[#1c5400] text-white rounded-xl hover:bg-[#38761d] transition-all duration-300 font-semibold border-2 border-transparent hover:border-[#38761d]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +40,7 @@ const ProjectDetail: React.FC = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Back to Home
+            Back to Projects
           </motion.button>
         </div>
       </motion.div>
@@ -86,7 +87,7 @@ const ProjectDetail: React.FC = () => {
       >
         <div className="max-w-4xl mx-auto">
           <motion.button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/projects')}
             className="group flex items-center gap-3 text-white bg-black/50 backdrop-blur-sm hover:bg-[#38761d] transition-all duration-300 mb-8 px-6 py-3 rounded-full border-2 border-[#38761d] hover:border-white shadow-lg hover:shadow-xl font-semibold"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -104,7 +105,7 @@ const ProjectDetail: React.FC = () => {
             >
               <ArrowLeft size={18} className="text-white group-hover:text-[#38761d] transition-colors duration-300" />
             </motion.div>
-            <span className="text-sm tracking-wide">Back to Portfolio</span>
+            <span className="text-sm tracking-wide">Back to Projects</span>
             <motion.div
               className="w-0 h-0.5 bg-white group-hover:w-4 transition-all duration-300"
               initial={{ width: 0 }}
@@ -533,197 +534,12 @@ const ProjectDetail: React.FC = () => {
                 ))}
               </div>
             </motion.section>
-
-            <motion.section 
-              className="bg-[#1c5400] border-2 border-[#38761d] rounded-xl p-6 shadow-2xl"
-              initial={{ opacity: 0, x: 50, rotateY: 20 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ delay: 1.5, duration: 0.6, ease: "easeOut" }}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 0 30px #38761d"
-              }}
-            >
-              <motion.h3 
-                className="text-2xl font-black text-white mb-8"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.7, duration: 0.4 }}
-              >
-                Project Links
-              </motion.h3>
-              <div className="space-y-6">
-                {project.githubUrl && (
-                  <motion.a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300 p-3 rounded-lg hover:bg-[#38761d]/20"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.8, duration: 0.4 }}
-                    whileHover={{ 
-                      x: 5,
-                      scale: 1.02
-                    }}
-                  >
-                    <Github size={20} />
-                    <span className="font-semibold">Source Code</span>
-                  </motion.a>
-                )}
-                {project.liveUrl && (
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300 p-3 rounded-lg hover:bg-[#38761d]/20 relative overflow-hidden"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ 
-                      opacity: 1, 
-                      x: 0,
-                      boxShadow: [
-                        "0 0 0 0 rgba(56, 118, 29, 0)",
-                        "0 0 0 6px rgba(56, 118, 29, 0.2)",
-                        "0 0 0 12px rgba(56, 118, 29, 0)",
-                      ]
-                    }}
-                    transition={{ 
-                      delay: 1.9, 
-                      duration: 0.4,
-                      boxShadow: {
-                        duration: 2.8,
-                        repeat: Infinity,
-                        ease: "easeOut"
-                      }
-                    }}
-                    whileHover={{ 
-                      x: 5,
-                      scale: 1.02
-                    }}
-                  >
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        rotate: [0, 6, -6, 0]
-                      }}
-                      transition={{
-                        duration: 2.3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <ExternalLink size={20} />
-                    </motion.div>
-                    <motion.span 
-                      className="font-semibold"
-                      animate={{
-                        y: [0, -2, 0],
-                      }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      Live
-                    </motion.span>
-                    
-                    {/* Wave effect background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent"
-                      initial={{ x: "-100%" }}
-                      animate={{ x: "100%" }}
-                      transition={{
-                        duration: 3.2,
-                        repeat: Infinity,
-                        ease: "linear",
-                        delay: Math.random() * 2
-                      }}
-                    />
-                  </motion.a>
-                )}
-              </div>
-            </motion.section>
           </div>
         </motion.div>
       </div>
 
-      {/* Full width footer */}
-      <motion.footer 
-        className="w-full bg-black mt-20"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: "easeOut" }}
-      >
-        {/* Full width border line */}
-        <motion.div 
-          className="w-full h-px bg-[#38761d]/30"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
-        />
-        
-        {/* Footer content with padding */}
-        <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center relative z-10">
-          <motion.div 
-            className="space-y-6"
-            whileHover={{ scale: 1.02 }}
-          >
-            {/* GitHub Logo */}
-            <motion.div
-              className="flex justify-center mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
-            >
-              <motion.div
-                className="p-4 bg-gradient-to-br from-[#1c5400]/30 to-[#38761d]/20 border border-[#38761d] rounded-full"
-                whileHover={{ 
-                  scale: 1.1,
-                  boxShadow: "0 10px 30px rgba(56, 118, 29, 0.4)"
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Github size={32} className="text-[#38761d]" />
-              </motion.div>
-            </motion.div>
-            
-            <p className="text-white/80 text-lg">
-              © 2025 LOVERnoey. All rights reserved
-            </p>
-            <p className="text-[#38761d] font-semibold">
-              Built with React, TypeScript, and Tailwind CSS
-            </p>
-            <motion.div 
-              className="flex justify-center space-x-6 mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.6, duration: 0.6 }}
-            >
-              <motion.a
-                href="https://github.com/LOVERnoey"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Follow me on GitHub
-              </motion.a>
-              <motion.a
-                href="https://lovernoey.itch.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Follow me on itch.io
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,44 @@
+/* Additional protection styles */
+*::selection {
+  background: transparent;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
+
+/* Disable drag and drop */
+* {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide scrollbars to prevent source inspection hints */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Prevent highlighting */
+*:focus {
+  outline: none;
+}
+
+/* Blur content when dev tools detected */
+.dev-tools-detected {
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Console warning styles */
+.console-warning {
+  color: #ff0000;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

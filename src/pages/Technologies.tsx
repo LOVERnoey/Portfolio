@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react';
+import Footer from '../components/Footer';
 import { 
   SiUnity,
   SiSharp,
@@ -28,85 +28,76 @@ import {
 
 const Technologies: React.FC = () => {
   const technologies = [
+    // Programming Languages
+    {
+      name: "C#",
+      category: "Programming Languages",
+      icon: SiSharp
+    },
+    {
+      name: "Java",
+      category: "Programming Languages",
+      icon: SiOpenjdk
+    },
+    {
+      name: "JavaScript",
+      category: "Programming Languages",
+      icon: SiJavascript
+    },
+    {
+      name: "Python",
+      category: "Programming Languages",
+      icon: SiPython
+    },
+    {
+      name: "C++",
+      category: "Programming Languages",
+      icon: SiCplusplus
+    },
+    {
+      name: "PHP",
+      category: "Programming Languages",
+      icon: SiPhp
+    },
+    
+    // Game Development
     {
       name: "Unity 2D & 3D",
       category: "Game Development",
       icon: SiUnity
     },
-    {
-      name: "C#",
-      category: "Programming",
-      icon: SiSharp
-    },
-    {
-      name: "Java",
-      category: "Programming",
-      icon: SiOpenjdk
-    },
-    {
-      name: "UI/UX Implementation in Unity",
-      category: "Design & Development",
-      icon: Palette
-    },
-    {
-      name: "Figma",
-      category: "Design",
-      icon: SiFigma
-    },
-    {
-      name: "Git / Version Control",
-      category: "Development Tools",
-      icon: SiGit
-    },
+    
+    // Web Development
     {
       name: "HTML5",
       category: "Web Development",
       icon: SiHtml5
     },
     {
-      name: "PHP",
+      name: "CSS3",
       category: "Web Development",
-      icon: SiPhp
+      icon: SiCss3
     },
-    {
-      name: "JavaScript",
-      category: "Web Development",
-      icon: SiJavascript
-    },
-    {
-      name: "Python",
-      category: "Programming",
-      icon: SiPython
-    },
-    {
-      name: "C++",
-      category: "Programming",
-      icon: SiCplusplus
-    },
-    {
-      name: "MySQL",
-      category: "Database",
-      icon: SiMysql
-    },
-    {
-      name: "Blender",
-      category: "3D Modeling",
-      icon: SiBlender
-    },
-    {
-      name: "Arduino",
-      category: "Hardware",
-      icon: SiArduino
-    },
+    
+    // Mobile Development
     {
       name: "React Native",
       category: "Mobile Development",
       icon: SiReact
     },
+    
+    // Database
     {
-      name: "CSS3",
-      category: "Web Development",
-      icon: SiCss3
+      name: "MySQL",
+      category: "Database",
+      icon: SiMysql
+    },
+    
+    // Development Tools
+    {
+      name: "Git / Version Control",
+      category: "Development Tools",
+      icon: SiGit
     },
     {
       name: "JetBrains Rider",
@@ -127,6 +118,28 @@ const Technologies: React.FC = () => {
       name: "XAMPP",
       category: "Development Tools",
       icon: SiApache
+    },
+    {
+      name: "Arduino",
+      category: "Development Tools",
+      icon: SiArduino
+    },
+    
+    // Design and 3D Modeling
+    {
+      name: "Figma",
+      category: "Design and 3D Modeling",
+      icon: SiFigma
+    },
+    {
+      name: "Blender",
+      category: "Design and 3D Modeling",
+      icon: SiBlender
+    },
+    {
+      name: "UI/UX Implementation in Unity",
+      category: "Design and 3D Modeling",
+      icon: Palette
     }
   ];
 
@@ -282,82 +295,8 @@ const Technologies: React.FC = () => {
         ))}
       </div>
 
-      {/* Full width footer */}
-      <motion.footer 
-        className="w-full bg-black mt-20"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: "easeOut" }}
-      >
-        {/* Full width border line */}
-        <motion.div 
-          className="w-full h-px bg-[#38761d]/30"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
-        />
-        
-        {/* Footer content with padding */}
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-          <motion.div 
-            className="space-y-6"
-            whileHover={{ scale: 1.02 }}
-          >
-            {/* GitHub Logo */}
-            <motion.div
-              className="flex justify-center mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
-            >
-              <motion.div
-                className="p-4 bg-gradient-to-br from-[#1c5400]/30 to-[#38761d]/20 border border-[#38761d] rounded-full"
-                whileHover={{ 
-                  scale: 1.1,
-                  boxShadow: "0 10px 30px rgba(56, 118, 29, 0.4)"
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Github size={32} className="text-[#38761d]" />
-              </motion.div>
-            </motion.div>
-            
-            <p className="text-white/80 text-lg">
-              © 2025 LOVERnoey. All rights reserved
-            </p>
-            <p className="text-[#38761d] font-semibold">
-              Built with React, TypeScript, and Tailwind CSS
-            </p>
-            <motion.div 
-              className="flex justify-center space-x-6 mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.6, duration: 0.6 }}
-            >
-              <motion.a
-                href="https://github.com/LOVERnoey"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Follow me on GitHub
-              </motion.a>
-              <motion.a
-                href="https://lovernoey.itch.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Follow me on itch.io
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

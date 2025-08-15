@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { personalInfo, projects } from '../data/portfolio';
 import ProjectCard from '../components/ProjectCard';
-import { Github, Facebook, ExternalLink, Gamepad2 } from 'lucide-react';
+import Footer from '../components/Footer';
+import { Github, Facebook, Gamepad2 } from 'lucide-react';
 import profileImage from '/profile.png';
 
 const Home = () => {
@@ -38,8 +39,7 @@ const Home = () => {
   const socialLinksArray = [
     { platform: "GitHub", url: personalInfo.socialLinks.github, icon: Github },
     { platform: "Itch.io", url: personalInfo.socialLinks.itchio, icon: Gamepad2 },
-    { platform: "Facebook", url: personalInfo.socialLinks.facebook, icon: Facebook },
-    { platform: "Portfolio", url: personalInfo.socialLinks.portfolio, icon: ExternalLink }
+    { platform: "Facebook", url: personalInfo.socialLinks.facebook, icon: Facebook }
   ].filter(link => link.url); // Filter out undefined URLs
 
   return (
@@ -400,73 +400,7 @@ const Home = () => {
       </motion.section>
 
       {/* Footer */}
-      <motion.footer 
-        className="py-12 px-6 border-t border-[#38761d]/30 text-center relative z-10"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: false }}
-      >
-        <motion.div 
-          className="max-w-7xl mx-auto space-y-6"
-          whileHover={{ scale: 1.02 }}
-        >
-          {/* GitHub Logo */}
-          <motion.div
-            className="flex justify-center mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: false }}
-          >
-            <motion.div
-              className="p-4 bg-gradient-to-br from-[#1c5400]/30 to-[#38761d]/20 border border-[#38761d] rounded-full"
-              whileHover={{ 
-                scale: 1.1,
-                boxShadow: "0 10px 30px rgba(56, 118, 29, 0.4)"
-              }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Github size={32} className="text-[#38761d]" />
-            </motion.div>
-          </motion.div>
-          
-          <p className="text-white/80 text-lg">
-            © 2025 LOVERnoey. All rights reserved
-          </p>
-          <p className="text-[#38761d] font-semibold">
-            Built with React, TypeScript, and Tailwind CSS
-          </p>
-          <motion.div 
-            className="flex justify-center space-x-6 mt-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            viewport={{ once: false }}
-          >
-            <motion.a
-              href="https://github.com/LOVERnoey"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Follow me on GitHub
-            </motion.a>
-            <motion.a
-              href="https://lovernoey.itch.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#38761d] transition-colors duration-300 font-medium"
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Follow me on itch.io
-            </motion.a>
-          </motion.div>
-        </motion.div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 };
