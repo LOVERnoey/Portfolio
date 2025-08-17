@@ -6,13 +6,13 @@ import ProjectCard from '../components/ProjectCard';
 
 const Projects: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black overflow-hidden relative pt-20">
+    <div className="min-h-screen bg-[#292929] overflow-hidden relative pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#38761d] rounded-full opacity-30"
+            className="absolute w-1 h-1 bg-[#ff914d] rounded-full opacity-30"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
           <motion.h1 
             className="text-5xl md:text-7xl font-black text-white mb-6"
             whileHover={{ 
-              color: "#38761d",
+              color: "#ff914d",
               scale: 1.02
             }}
           >
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
           
           {/* Decorative line */}
           <motion.div 
-            className="w-32 h-2 bg-gradient-to-r from-[#1c5400] to-[#38761d] mx-auto rounded-full mt-8"
+            className="w-32 h-2 bg-gradient-to-r from-[#23426b] to-[#ff914d] mx-auto rounded-full mt-8"
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: 128, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}

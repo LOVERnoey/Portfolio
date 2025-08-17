@@ -14,7 +14,7 @@ const ProjectDetail: React.FC = () => {
   if (!project) {
     return (
       <motion.div 
-        className="min-h-screen flex items-center justify-center bg-black"
+        className="min-h-screen flex items-center justify-center bg-[#292929]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
@@ -30,13 +30,13 @@ const ProjectDetail: React.FC = () => {
           </motion.h2>
           <motion.button 
             onClick={() => navigate('/projects')}
-            className="px-8 py-4 bg-[#1c5400] text-white rounded-xl hover:bg-[#38761d] transition-all duration-300 font-semibold border-2 border-transparent hover:border-[#38761d]"
+            className="px-8 py-4 bg-[#23426b] text-white rounded-xl hover:bg-[#ff914d] transition-all duration-300 font-semibold border-2 border-transparent hover:border-[#ff914d]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 30px #38761d"
+              boxShadow: "0 0 30px #ff914d"
             }}
             whileTap={{ scale: 0.95 }}
           >
@@ -51,14 +51,14 @@ const ProjectDetail: React.FC = () => {
   
   return (
     <div 
-      className="min-h-screen bg-black overflow-hidden relative"
+      className="min-h-screen bg-[#292929] overflow-hidden relative"
     >
       {/* Animated background elements like Home page */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#38761d] rounded-full opacity-30"
+            className="absolute w-1 h-1 bg-[#ff914d] rounded-full opacity-30"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
@@ -80,7 +80,7 @@ const ProjectDetail: React.FC = () => {
 
       {/* Header */}
       <motion.div 
-        className="bg-[#1c5400] py-8 px-4 relative z-10"
+        className="bg-[#23426b] py-8 px-4 relative z-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -88,7 +88,7 @@ const ProjectDetail: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <motion.button
             onClick={() => navigate('/projects')}
-            className="group flex items-center gap-3 text-white bg-black/50 backdrop-blur-sm hover:bg-[#38761d] transition-all duration-300 mb-8 px-6 py-3 rounded-full border-2 border-[#38761d] hover:border-white shadow-lg hover:shadow-xl font-semibold"
+            className="group flex items-center gap-3 text-white bg-[#292929]/50 backdrop-blur-sm hover:bg-[#ff914d] transition-all duration-300 mb-8 px-6 py-3 rounded-full border-2 border-[#ff914d] hover:border-white shadow-lg hover:shadow-xl font-semibold"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.4 }}
@@ -99,11 +99,11 @@ const ProjectDetail: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
-              className="p-1 rounded-full bg-[#38761d] group-hover:bg-white transition-colors duration-300"
+              className="p-1 rounded-full bg-[#ff914d] group-hover:bg-white transition-colors duration-300"
               whileHover={{ rotate: -360 }}
               transition={{ duration: 0.6 }}
             >
-              <ArrowLeft size={18} className="text-white group-hover:text-[#38761d] transition-colors duration-300" />
+              <ArrowLeft size={18} className="text-white group-hover:text-[#ff914d] transition-colors duration-300" />
             </motion.div>
             <span className="text-sm tracking-wide">Back to Projects</span>
             <motion.div
@@ -128,17 +128,17 @@ const ProjectDetail: React.FC = () => {
             transition={{ delay: 0.25, duration: 0.5 }}
           >
             <motion.div
-              className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-[#1c5400] to-[#38761d] rounded-full border-2 border-[#38761d] shadow-lg"
+              className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-[#23426b] to-[#ff914d] rounded-full border-2 border-[#ff914d] shadow-lg"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 20px #38761d",
-                background: "linear-gradient(45deg, #38761d, #1c5400)"
+                boxShadow: "0 0 20px #ff914d",
+                background: "linear-gradient(45deg, #ff914d, #23426b)"
               }}
               animate={{
                 boxShadow: [
-                  "0 0 10px rgba(56, 118, 29, 0.3)",
-                  "0 0 20px rgba(56, 118, 29, 0.5)",
-                  "0 0 10px rgba(56, 118, 29, 0.3)"
+                  "0 0 10px rgba(255, 145, 77, 0.3)",
+                  "0 0 20px rgba(255, 145, 77, 0.5)",
+                  "0 0 10px rgba(255, 145, 77, 0.3)"
                 ]
               }}
               transition={{
@@ -178,13 +178,13 @@ const ProjectDetail: React.FC = () => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-xl hover:bg-[#38761d] transition-all duration-300 border-2 border-transparent hover:border-[#38761d]"
+                className="flex items-center gap-2 px-6 py-3 bg-[#292929] text-white rounded-xl hover:bg-[#ff914d] transition-all duration-300 border-2 border-transparent hover:border-[#ff914d]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 0 20px #38761d"
+                  boxShadow: "0 0 20px #ff914d"
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -198,7 +198,7 @@ const ProjectDetail: React.FC = () => {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-[#38761d] text-white rounded-xl hover:bg-black transition-all duration-300 border-2 border-transparent hover:border-[#1c5400] relative overflow-hidden"
+                className="flex items-center gap-2 px-6 py-3 bg-[#ff914d] text-white rounded-xl hover:bg-[#292929] transition-all duration-300 border-2 border-transparent hover:border-[#23426b] relative overflow-hidden"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: 1, 
@@ -220,7 +220,7 @@ const ProjectDetail: React.FC = () => {
                 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 0 20px #1c5400"
+                  boxShadow: "0 0 20px #23426b"
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -252,7 +252,7 @@ const ProjectDetail: React.FC = () => {
                 
                 {/* Wave effect background */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff914d]/15 to-transparent"
                   initial={{ x: "-100%" }}
                   animate={{ x: "100%" }}
                   transition={{
@@ -284,7 +284,7 @@ const ProjectDetail: React.FC = () => {
           <motion.div className="relative overflow-hidden rounded-2xl shadow-2xl">
             {/* Background glow effect */}
             <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-[#1c5400] via-[#38761d] to-[#1c5400] rounded-3xl opacity-30 blur-xl"
+              className="absolute -inset-4 bg-gradient-to-r from-[#23426b] via-[#ff914d] to-[#23426b] rounded-3xl opacity-30 blur-xl"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.3, 0.6, 0.3]
@@ -298,9 +298,9 @@ const ProjectDetail: React.FC = () => {
             
             {/* Main image container */}
             <motion.div 
-              className="relative bg-gradient-to-br from-[#1c5400] to-[#38761d] p-1 rounded-2xl"
+              className="relative bg-gradient-to-br from-[#23426b] to-[#ff914d] p-1 rounded-2xl"
               whileHover={{
-                background: "linear-gradient(135deg, #38761d, #1c5400, #38761d)"
+                background: "linear-gradient(135deg, #ff914d, #23426b, #ff914d)"
               }}
               transition={{ duration: 0.3 }}
             >
@@ -331,28 +331,28 @@ const ProjectDetail: React.FC = () => {
               
               {/* Animated corner accents */}
               <motion.div
-                className="absolute top-2 left-2 w-6 h-6 border-l-4 border-t-4 border-[#38761d] rounded-tl-lg"
+                className="absolute top-2 left-2 w-6 h-6 border-l-4 border-t-4 border-[#ff914d] rounded-tl-lg"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
                 whileHover={{ scale: 1.2, borderColor: "#ffffff" }}
               />
               <motion.div
-                className="absolute top-2 right-2 w-6 h-6 border-r-4 border-t-4 border-[#38761d] rounded-tr-lg"
+                className="absolute top-2 right-2 w-6 h-6 border-r-4 border-t-4 border-[#ff914d] rounded-tr-lg"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.3, duration: 0.5 }}
                 whileHover={{ scale: 1.2, borderColor: "#ffffff" }}
               />
               <motion.div
-                className="absolute bottom-2 left-2 w-6 h-6 border-l-4 border-b-4 border-[#38761d] rounded-bl-lg"
+                className="absolute bottom-2 left-2 w-6 h-6 border-l-4 border-b-4 border-[#ff914d] rounded-bl-lg"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
                 whileHover={{ scale: 1.2, borderColor: "#ffffff" }}
               />
               <motion.div
-                className="absolute bottom-2 right-2 w-6 h-6 border-r-4 border-b-4 border-[#38761d] rounded-br-lg"
+                className="absolute bottom-2 right-2 w-6 h-6 border-r-4 border-b-4 border-[#ff914d] rounded-br-lg"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.5, duration: 0.5 }}
@@ -386,7 +386,7 @@ const ProjectDetail: React.FC = () => {
                   {project.title}
                 </motion.p>
                 <motion.p 
-                  className="text-[#38761d] font-medium"
+                  className="text-[#ff914d] font-medium"
                   animate={{
                     opacity: [0.8, 1, 0.8]
                   }}
@@ -436,7 +436,7 @@ const ProjectDetail: React.FC = () => {
               <motion.h2 
                 className="text-3xl font-black text-white mb-8"
                 whileHover={{ 
-                  color: "#38761d",
+                  color: "#ff914d",
                   scale: 1.02
                 }}
               >
@@ -460,7 +460,7 @@ const ProjectDetail: React.FC = () => {
               <motion.h2 
                 className="text-3xl font-black text-white mb-8"
                 whileHover={{ 
-                  color: "#38761d",
+                  color: "#ff914d",
                   scale: 1.02
                 }}
               >
@@ -488,7 +488,7 @@ const ProjectDetail: React.FC = () => {
                       animate={{ scale: 1, rotate: 0 }}
                       transition={{ delay: 1.5 + index * 0.05, duration: 0.3 }}
                     >
-                      <CheckCircle className="text-[#38761d] mt-1 flex-shrink-0" size={20} />
+                      <CheckCircle className="text-[#ff914d] mt-1 flex-shrink-0" size={20} />
                     </motion.div>
                     <span className="text-gray-300 font-medium">{feature}</span>
                   </motion.div>
@@ -507,7 +507,7 @@ const ProjectDetail: React.FC = () => {
               <motion.h3 
                 className="text-2xl font-black text-white mb-8"
                 whileHover={{ 
-                  color: "#38761d",
+                  color: "#ff914d",
                   scale: 1.02
                 }}
               >
@@ -517,7 +517,7 @@ const ProjectDetail: React.FC = () => {
                 {project.technologies.map((tech, index) => (
                   <motion.div
                     key={index}
-                    className="px-4 py-3 bg-[#1c5400] text-white rounded-xl font-semibold border-2 border-[#38761d] shadow-lg"
+                    className="px-4 py-3 bg-[#23426b] text-white rounded-xl font-semibold border-2 border-[#ff914d] shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ 
@@ -526,7 +526,7 @@ const ProjectDetail: React.FC = () => {
                     }}
                     whileHover={{ 
                       scale: 1.05,
-                      boxShadow: "0 0 20px #38761d"
+                      boxShadow: "0 0 20px #ff914d"
                     }}
                   >
                     {tech}

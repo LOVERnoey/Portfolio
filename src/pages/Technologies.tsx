@@ -18,7 +18,11 @@ import {
   SiCss3,
   SiApache,
   SiArduino,
-  SiJetbrains
+  SiJetbrains,
+  SiFramer,
+  SiTailwindcss,
+  SiBootstrap,
+  SiPostgresql
 } from 'react-icons/si';
 import { 
   Palette,
@@ -78,6 +82,26 @@ const Technologies: React.FC = () => {
       category: "Web Development",
       icon: SiCss3
     },
+    {
+      name: "React",
+      category: "Web Development",
+      icon: SiReact
+    },
+    {
+      name: "Framer Motion",
+      category: "Web Development",
+      icon: SiFramer
+    },
+    {
+      name: "Tailwind CSS",
+      category: "Web Development",
+      icon: SiTailwindcss
+    },
+    {
+      name: "Bootstrap",
+      category: "Web Development",
+      icon: SiBootstrap
+    },
     
     // Mobile Development
     {
@@ -91,6 +115,11 @@ const Technologies: React.FC = () => {
       name: "MySQL",
       category: "Database",
       icon: SiMysql
+    },
+    {
+      name: "PostgreSQL",
+      category: "Database",
+      icon: SiPostgresql
     },
     
     // Development Tools
@@ -153,13 +182,13 @@ const Technologies: React.FC = () => {
   }, {} as Record<string, typeof technologies>);
 
   return (
-    <div className="min-h-screen bg-black overflow-hidden relative pt-20">
+    <div className="min-h-screen bg-[#292929] overflow-hidden relative pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#38761d] rounded-full opacity-30"
+            className="absolute w-1 h-1 bg-[#ff914d] rounded-full opacity-30"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
@@ -191,7 +220,7 @@ const Technologies: React.FC = () => {
           <motion.h1 
             className="text-5xl md:text-7xl font-black text-white mb-6"
             whileHover={{ 
-              color: "#38761d",
+              color: "#ff914d",
               scale: 1.02
             }}
           >
@@ -209,7 +238,7 @@ const Technologies: React.FC = () => {
             <motion.h2 
               className="text-3xl font-black text-white mb-8 text-center"
               whileHover={{ 
-                color: "#38761d",
+                color: "#ff914d",
                 scale: 1.02
               }}
             >
@@ -220,7 +249,7 @@ const Technologies: React.FC = () => {
               {techs.map((tech, techIndex) => (
                 <motion.div
                   key={tech.name}
-                  className="group bg-gradient-to-br from-[#1c5400]/30 to-[#38761d]/20 border border-[#38761d] rounded-2xl p-6 hover:bg-gradient-to-br hover:from-[#38761d]/40 hover:to-[#1c5400]/30 transition-all duration-300 relative overflow-hidden"
+                  className="group bg-gradient-to-br from-[#23426b]/30 to-[#ff914d]/20 border border-[#ff914d] rounded-2xl p-6 hover:bg-gradient-to-br hover:from-[#ff914d]/40 hover:to-[#23426b]/30 transition-all duration-300 relative overflow-hidden"
                   initial={{ opacity: 0, scale: 0.8, y: 30 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ 
@@ -231,7 +260,7 @@ const Technologies: React.FC = () => {
                   whileHover={{ 
                     scale: 1.05,
                     y: -8,
-                    boxShadow: "0 20px 40px rgba(56, 118, 29, 0.3)"
+                    boxShadow: "0 20px 40px rgba(255, 145, 77, 0.3)"
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -253,7 +282,7 @@ const Technologies: React.FC = () => {
                     whileHover={{ scale: 1.1 }}
                   >
                     <motion.div 
-                      className="flex items-center justify-center mb-4 text-[#38761d]"
+                      className="flex items-center justify-center mb-4 text-[#ff914d]"
                       animate={{
                         scale: [1, 1.02, 1]
                       }}
@@ -267,7 +296,7 @@ const Technologies: React.FC = () => {
                       <tech.icon size={48} />
                     </motion.div>
                     <motion.h3 
-                      className="text-white font-bold text-lg mb-2 group-hover:text-[#38761d] transition-colors duration-300"
+                      className="text-white font-bold text-lg mb-2 group-hover:text-[#ff914d] transition-colors duration-300"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.0 + categoryIndex * 0.1 + techIndex * 0.05 }}
@@ -277,7 +306,7 @@ const Technologies: React.FC = () => {
                     
                     {/* Animated border */}
                     <motion.div
-                      className="w-0 h-0.5 bg-[#38761d] mx-auto group-hover:w-full transition-all duration-500"
+                      className="w-0 h-0.5 bg-[#ff914d] mx-auto group-hover:w-full transition-all duration-500"
                       initial={{ width: 0 }}
                       whileHover={{ width: "100%" }}
                     />
@@ -285,7 +314,7 @@ const Technologies: React.FC = () => {
                   
                   {/* Hover glow effect */}
                   <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-[#1c5400] to-[#38761d] rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"
+                    className="absolute -inset-1 bg-gradient-to-r from-[#23426b] to-[#ff914d] rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"
                     initial={{ opacity: 0 }}
                   />
                 </motion.div>

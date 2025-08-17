@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <motion.div
-      className="bg-black border-2 border-[#38761d] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:border-[#1c5400] transition-all duration-300 cursor-pointer group h-[500px] flex flex-col"
+            className="bg-[#292929] border-2 border-[#ff914d] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:border-[#23426b] transition-all duration-300 cursor-pointer group h-[500px] flex flex-col"
       whileHover={{ y: -8 }}
       onClick={handleProjectClick}
     >
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="relative h-48 overflow-hidden">
         {/* Background glow effect */}
         <motion.div
-          className="absolute -inset-2 bg-gradient-to-r from-[#1c5400] via-[#38761d] to-[#1c5400] opacity-20 blur-md"
+                    className="absolute -inset-2 bg-gradient-to-r from-[#23426b] via-[#ff914d] to-[#23426b] opacity-20 blur-md"
           animate={{
             scale: [1, 1.05, 1],
             opacity: [0.2, 0.4, 0.2]
@@ -38,9 +38,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         
         {/* Image container with gradient border */}
         <motion.div 
-          className="relative h-full bg-gradient-to-br from-[#1c5400] to-[#38761d] p-0.5"
+          className="relative h-full bg-gradient-to-br from-[#23426b] to-[#ff914d] p-0.5"
           whileHover={{
-            background: "linear-gradient(135deg, #38761d, #1c5400, #38761d)"
+            background: "linear-gradient(135deg, #ff914d, #23426b, #ff914d)"
           }}
           transition={{ duration: 0.3 }}
         >
@@ -60,25 +60,25 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           
           {/* Corner accents */}
           <motion.div
-            className="absolute top-1 left-1 w-4 h-4 border-l-3 border-t-3 border-[#38761d] opacity-0 group-hover:opacity-100"
+            className="absolute top-1 left-1 w-4 h-4 border-l-3 border-t-3 border-[#ff914d] opacity-0 group-hover:opacity-100"
             initial={{ scale: 0 }}
             whileHover={{ scale: 1 }}
             transition={{ duration: 0.3 }}
           />
           <motion.div
-            className="absolute top-1 right-1 w-4 h-4 border-r-3 border-t-3 border-[#38761d] opacity-0 group-hover:opacity-100"
+            className="absolute top-1 right-1 w-4 h-4 border-r-3 border-t-3 border-[#ff914d] opacity-0 group-hover:opacity-100"
             initial={{ scale: 0 }}
             whileHover={{ scale: 1 }}
             transition={{ duration: 0.3, delay: 0.1 }}
           />
           <motion.div
-            className="absolute bottom-1 left-1 w-4 h-4 border-l-3 border-b-3 border-[#38761d] opacity-0 group-hover:opacity-100"
+            className="absolute bottom-1 left-1 w-4 h-4 border-l-3 border-b-3 border-[#ff914d] opacity-0 group-hover:opacity-100"
             initial={{ scale: 0 }}
             whileHover={{ scale: 1 }}
             transition={{ duration: 0.3, delay: 0.2 }}
           />
           <motion.div
-            className="absolute bottom-1 right-1 w-4 h-4 border-r-3 border-b-3 border-[#38761d] opacity-0 group-hover:opacity-100"
+            className="absolute bottom-1 right-1 w-4 h-4 border-r-3 border-b-3 border-[#ff914d] opacity-0 group-hover:opacity-100"
             initial={{ scale: 0 }}
             whileHover={{ scale: 1 }}
             transition={{ duration: 0.3, delay: 0.3 }}
@@ -132,7 +132,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       {/* Project Content */}
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#38761d] transition-colors duration-300">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#ff914d] transition-colors duration-300">
           {project.title}
         </h3>
         
@@ -142,7 +142,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.4 }}
         >
-          <span className="inline-block px-3 py-1 bg-[#38761d] text-white text-sm font-bold rounded-full border-2 border-[#1c5400] shadow-md">
+          <span className="inline-block px-3 py-1 bg-[#23426b] text-white text-sm font-bold rounded-full border-2 border-[#ff914d] shadow-md">
             {project.position}
           </span>
         </motion.div>
@@ -156,13 +156,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {project.technologies.slice(0, 3).map((tech, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-[#38761d] text-white text-sm rounded-full font-medium"
+              className="px-3 py-1 bg-[#23426b] text-white text-sm rounded-full font-medium"
             >
               {tech}
             </span>
           ))}
           {project.technologies.length > 3 && (
-            <span className="px-3 py-1 bg-[#1c5400] text-gray-200 text-sm rounded-full font-medium">
+            <span className="px-3 py-1 bg-[#ff914d] text-white text-sm rounded-full font-medium">
               +{project.technologies.length - 3} more
             </span>
           )}
@@ -175,7 +175,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-[#1c5400] text-white rounded-lg hover:bg-[#38761d] transition-colors duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-[#23426b] text-white rounded-lg hover:bg-[#ff914d] transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
@@ -190,15 +190,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-[#38761d] text-white rounded-lg hover:bg-[#1c5400] transition-colors duration-300 relative overflow-hidden"
+              className="flex items-center gap-2 px-4 py-2 bg-[#ff914d] text-white rounded-lg hover:bg-[#23426b] transition-colors duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
               animate={{
                 boxShadow: [
-                  "0 0 0 0 rgba(56, 118, 29, 0)",
-                  "0 0 0 8px rgba(56, 118, 29, 0.3)",
-                  "0 0 0 16px rgba(56, 118, 29, 0)",
+                  "0 0 0 0 rgba(255, 145, 77, 0)",
+                  "0 0 0 8px rgba(255, 145, 77, 0.3)",
+                  "0 0 0 16px rgba(255, 145, 77, 0)",
                 ]
               }}
               transition={{

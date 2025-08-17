@@ -43,13 +43,13 @@ const Home = () => {
   ].filter(link => link.url); // Filter out undefined URLs
 
   return (
-    <div className="min-h-screen bg-black overflow-hidden relative">
+    <div className="min-h-screen bg-[#292929] overflow-hidden relative">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#38761d] rounded-full opacity-20"
+            className="absolute w-2 h-2 bg-[#ff914d] rounded-full opacity-20"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
               y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
@@ -85,7 +85,7 @@ const Home = () => {
             <div className="relative group">
               {/* Multiple rotating borders with beat pulse */}
               <motion.div
-                className="absolute -inset-4 border-4 border-[#38761d] rounded-full"
+                className="absolute -inset-4 border-4 border-[#ff914d] rounded-full"
                 animate={{ 
                   rotate: 360,
                   scale: [1, 1.1, 1, 1.05, 1],
@@ -98,7 +98,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -inset-6 border-2 border-[#1c5400] rounded-full opacity-50"
+                className="absolute -inset-6 border-2 border-[#23426b] rounded-full opacity-50"
                 animate={{ 
                   rotate: -360,
                   scale: [1, 1.08, 1, 1.04, 1],
@@ -111,7 +111,7 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -inset-8 border border-[#38761d] rounded-full opacity-30"
+                className="absolute -inset-8 border border-[#ff914d] rounded-full opacity-30"
                 animate={{ 
                   rotate: 360,
                   scale: [1, 1.12, 1, 1.06, 1],
@@ -127,7 +127,7 @@ const Home = () => {
               <motion.img
                 src={profileImage}
                 alt={personalInfo.name}
-                className="w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-[#38761d] shadow-2xl relative z-10"
+                className="w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-[#23426b] shadow-2xl relative z-10"
                 initial={{ 
                   opacity: 0, 
                   scale: 0,
@@ -180,7 +180,7 @@ const Home = () => {
                 ))}
               </motion.h1>
               <motion.h2 
-                className="text-3xl md:text-4xl text-[#38761d] font-bold mb-6 tracking-wide"
+                className="text-3xl md:text-4xl text-[#ff914d] font-bold mb-6 tracking-wide"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -216,7 +216,7 @@ const Home = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 bg-[#1c5400] text-white rounded-xl transition-all duration-300 hover:bg-[#38761d] shadow-lg border-2 border-transparent hover:border-[#38761d] flex items-center justify-center"
+                    className="p-4 bg-[#23426b] text-white rounded-xl transition-all duration-300 hover:bg-[#ff914d] shadow-lg border-2 border-transparent hover:border-[#ff914d] flex items-center justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ 
@@ -301,14 +301,14 @@ const Home = () => {
               className="text-5xl md:text-6xl font-black text-white mb-6 font-display"
               whileHover={{ 
                 scale: 1.05,
-                color: "#38761d",
-                textShadow: "0 0 30px #38761d"
+                color: "#ff914d",
+                textShadow: "0 0 30px #ff914d"
               }}
             >
               My Projects
             </motion.h2>
             <motion.div 
-              className="w-32 h-2 bg-gradient-to-r from-[#1c5400] to-[#38761d] mx-auto rounded-full"
+              className="w-32 h-2 bg-gradient-to-r from-[#23426b] to-[#ff914d] mx-auto rounded-full"
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ 
                 width: 128, 
